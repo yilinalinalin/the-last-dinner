@@ -748,15 +748,15 @@ function handleScroll() {
     // Text fades/slide with scroll
     if (section4TextEl) {
         section4TextEl.style.opacity = `${section4Alpha}`;
-        section4TextEl.style.transform = `translateY(-50%) translateX(${-(1 - section4Alpha) * 50}px)`;
+        section4TextEl.style.transform = `translateX(${-(1 - section4Alpha) * 50}px)`;
     }
     if (section2TextEl) {
         section2TextEl.style.opacity = `${section2Alpha}`;
-        section2TextEl.style.transform = `translateY(-50%) translateX(${(1 - section2Alpha) * 50}px)`;  /* slide in from right */
+        section2TextEl.style.transform = `translateX(${-(1 - section2Alpha) * 50}px)`;
     }
     if (section3TextEl) {
         section3TextEl.style.opacity = `${section3Alpha}`;
-        section3TextEl.style.transform = `translateY(-50%) translateX(${-(1 - section3Alpha) * 50}px)`;
+        section3TextEl.style.transform = `translateX(${-(1 - section3Alpha) * 50}px)`;
     }
 
     // Hero: show yarn_girl_model.png image instead of 3D model; image fades with scroll

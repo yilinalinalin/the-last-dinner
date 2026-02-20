@@ -846,59 +846,267 @@ button.hero-updates-btn {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* ===== Mobile fixes ===== */
+/* ===== Mobile responsive styles ===== */
 @media (max-width: 900px) {
+  /* Hide custom cursor and torch overlay on mobile */
+  #cursor-sphere,
+  #torch-overlay {
+    display: none !important;
+  }
+  body {
+    cursor: auto !important;
+  }
 
-    #section-2, #section-3, #section-4 {
-    max-width: 720px;
-    margin: 0 auto;
+  /* Offset anchor scroll so section headers aren't hidden behind fixed menu */
+  html {
+    scroll-padding-top: 56px;
   }
 
   /* Nav / menu */
-  .menu-bar{
-    padding: 14px 16px;
-    gap: 18px;
+  .menu-bar {
+    padding: 14px 20px;
+    gap: 24px;
     justify-content: center;
   }
-  .menu-item{
+  .menu-item {
     font-size: 14px;
     letter-spacing: 0.5px;
   }
 
-  /* Give the page space under fixed menu so sections don't hide behind it */
-  body{
-    padding-top: 56px; /* match approx menu height */
+  /* Hero section */
+  .hero-yarn-image {
+    height: 55vh;
+    max-width: 85vw;
+    bottom: 12vh;
+  }
+  .hero-bottom-ui {
+    bottom: 24px;
+    gap: 10px;
+  }
+  .hero-title-gif {
+    width: min(400px, 90vw);
+  }
+  .hero-coming-soon {
+    font-size: 14px;
+    margin-bottom: -24px;
+  }
+  .hero-updates-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  .hero-updates-form {
+    margin-top: -12px;
+  }
+
+  /* Synopsis section */
+  #synopsis-section {
+    min-height: 100vh;
+    height: auto;
+    padding: 60px 24px 80px;
+    align-items: flex-start;
+  }
+  .synopsis-content {
+    padding: 0 16px;
+    max-width: 100%;
+  }
+  .synopsis-title {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+  .synopsis-text {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .pitch-deck-form {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 32px;
+    padding-top: 24px;
+  }
+  .pitch-deck-form .updates-input {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .pitch-deck-btn {
+    font-size: 14px;
+    padding: 12px 20px;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* Sections 2, 3, 4 - stack vertically on tablet/mobile */
+  #section-2,
+  #section-3,
+  #section-4 {
+    height: auto;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 60px 24px 80px;
+    gap: 40px;
+  }
+  .section-2-model-image,
+  .section-3-model-image,
+  .section-4-model-image {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    height: 40vh;
+    max-width: 100%;
+    width: 100%;
+    object-position: center;
+  }
+  .section-2-text,
+  .section-3-text,
+  .section-4-text {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    width: 100%;
+    transform: none;
+    opacity: 1;
+    padding: 0;
+  }
+  .section-2-text.visible,
+  .section-3-text.visible,
+  .section-4-text.visible {
+    transform: none;
+  }
+  .section-title {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+  .section-2-text p,
+  .section-3-text p,
+  .section-4-text p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* Team section */
+  #team-section {
+    padding: 60px 24px 80px;
+  }
+  .team-title {
+    font-size: 26px;
+    margin-bottom: 36px;
+  }
+  .team-grid {
+    gap: 24px;
+  }
+  .team-member-name {
+    font-size: 14px;
+  }
+  .team-member-bio {
+    font-size: 13px;
+    padding: 16px;
+  }
+
+  /* Footer */
+  #footer {
+    padding: 40px 24px;
+  }
+  .footer-links {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .social-link {
+    font-size: 14px;
+  }
+  .social-link span {
+    word-break: break-all;
+  }
+
+  /* Designer footer */
+  #designer-footer {
+    padding: 20px 24px;
+  }
+  .designer-footer-content {
+    font-size: 12px;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
   }
 }
 
-/* Hero must be in normal flow */
-  .hero,
-  #hero,
-  .hero-section,
-  #hero-section {
-    height: auto !important;
-    min-height: 0 !important;
-    padding: 28px 18px 18px !important;
-    overflow: visible !important;
+/* Small mobile (phones) */
+@media (max-width: 480px) {
+  .menu-bar {
+    padding: 12px 16px;
+    gap: 20px;
+  }
+  .menu-item {
+    font-size: 13px;
   }
 
-  /* Anything that was centered with absolute positioning should be normal on mobile */
-  .hero-content,
-  #hero-content,
-  .about-text,
-  #about-text {
-    position: static !important;
-    transform: none !important;
-    width: auto !important;
-    max-width: 680px;
-    margin: 0 auto;
+  .hero-yarn-image {
+    height: 50vh;
+  }
+  .hero-bottom-ui {
+    bottom: 16px;
+  }
+  .hero-title-gif {
+    width: min(320px, 92vw);
+  }
+  .hero-coming-soon {
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: -16px;
   }
 
-  /* About spacing so it doesn't collide with hero */
-  #about,
-  .about-section {
-    padding: 28px 18px 42px !important;
-    margin-top: 12px !important;
+  #synopsis-section,
+  #section-2,
+  #section-3,
+  #section-4 {
+    padding: 48px 16px 60px;
+  }
+  .synopsis-title,
+  .section-title {
+    font-size: 22px;
+  }
+  .synopsis-text {
+    font-size: 15px;
+  }
+
+  .section-2-model-image,
+  .section-3-model-image,
+  .section-4-model-image {
+    height: 35vh;
+  }
+
+  #team-section {
+    padding: 48px 16px 60px;
+  }
+  .team-title {
+    font-size: 22px;
+    margin-bottom: 28px;
+  }
+
+  #footer {
+    padding: 32px 16px;
+  }
+  .footer-links {
+    gap: 16px;
+  }
+
+  #designer-footer {
+    padding: 16px;
+  }
+  .designer-footer-content {
+    font-size: 11px;
+  }
+
+  .hover-text {
+    max-width: 260px;
+    padding: 16px 20px;
+  }
+  .hover-text h2 {
+    font-size: 20px;
+  }
+  .hover-text p {
+    font-size: 14px;
   }
 }
 

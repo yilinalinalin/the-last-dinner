@@ -364,7 +364,7 @@ a.credits-updates-btn {
     object-position: left bottom;
     z-index: 5;
     pointer-events: none;
-    opacity: 0;
+    opacity: 1;
 }
 
 /* Section 2 text (right side – image on left) */
@@ -433,7 +433,7 @@ a.credits-updates-btn {
     object-position: right bottom;
     z-index: 5;
     pointer-events: none;
-    opacity: 0;
+    opacity: 1;
 }
 
 /* Section 3 text (left side) */
@@ -480,7 +480,7 @@ a.credits-updates-btn {
     object-position: right bottom;
     z-index: 5;
     pointer-events: none;
-    opacity: 0;
+    opacity: 1;
 }
 
 .section-4-text {

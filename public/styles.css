@@ -372,7 +372,7 @@ a.credits-updates-btn {
     position: absolute;
     right: 200px;
     left: auto;
-    top: 60%;
+    top: 50%;
     transform: translateY(-50%);
     width: 550px;
     font-family: 'Poppins', sans-serif;
@@ -440,7 +440,7 @@ a.credits-updates-btn {
 .section-3-text {
     position: absolute;
     left: 200px;
-    top: 60%;
+    top: 50%;
     transform: translateY(-50%);
     width: 550px;
     font-family: 'Poppins', sans-serif;
@@ -486,7 +486,7 @@ a.credits-updates-btn {
 .section-4-text {
     position: absolute;
     left: 200px;
-    top: 60%;
+    top: 50%;
     transform: translateY(-50%);
     width: 550px;
     font-family: 'Poppins', sans-serif;
@@ -869,33 +869,34 @@ button.hero-updates-btn {
     justify-content: center;
   }
   .menu-item {
-    font-size: 14px;
+    font-size: 18px;
     letter-spacing: 0.5px;
   }
 
-  /* Hero section */
+  /* Hero section - yarn image larger, title + Get Updates fit in first viewport */
   .hero-yarn-image {
-    height: 55vh;
-    max-width: 85vw;
-    bottom: 12vh;
+    height: 70vh;
+    max-width: 92vw;
+    bottom: 22vh;
+    object-position: center bottom;
   }
   .hero-bottom-ui {
-    bottom: 24px;
-    gap: 10px;
+    bottom: 20px;
+    gap: 8px;
   }
   .hero-title-gif {
-    width: min(400px, 90vw);
+    width: min(420px, 92vw);
   }
   .hero-coming-soon {
     font-size: 14px;
-    margin-bottom: -24px;
+    margin-bottom: -16px;
   }
   .hero-updates-btn {
-    font-size: 14px;
-    padding: 10px 20px;
+    font-size: 15px;
+    padding: 10px 22px;
   }
   .hero-updates-form {
-    margin-top: -12px;
+    margin-top: -8px;
   }
 
   /* Synopsis section */
@@ -1038,22 +1039,25 @@ button.hero-updates-btn {
     gap: 20px;
   }
   .menu-item {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .hero-yarn-image {
-    height: 50vh;
+    height: 65vh;
+    max-width: 94vw;
+    bottom: 20vh;
   }
   .hero-bottom-ui {
     bottom: 16px;
+    gap: 6px;
   }
   .hero-title-gif {
-    width: min(320px, 92vw);
+    width: min(360px, 94vw);
   }
   .hero-coming-soon {
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 1px;
-    margin-bottom: -16px;
+    margin-bottom: -12px;
   }
 
   #synopsis-section,

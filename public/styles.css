@@ -486,7 +486,7 @@ a.credits-updates-btn {
 .section-4-text {
     position: absolute;
     left: 200px;
-    top: 50%;
+    top: 30%;
     transform: translateY(-50%);
     width: 550px;
     font-family: 'Poppins', sans-serif;

@@ -470,6 +470,7 @@ a.credits-updates-btn {
 }
 
 .section-4-model-image {
+    outline: 4px solid red !important;
     position: absolute;
     right: 0;
     bottom: 0;

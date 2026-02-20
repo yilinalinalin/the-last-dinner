@@ -849,6 +849,11 @@ button.hero-updates-btn {
 /* ===== Mobile fixes ===== */
 @media (max-width: 900px) {
 
+    #section-2, #section-3, #section-4 {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
   /* Nav / menu */
   .menu-bar{
     padding: 14px 16px;

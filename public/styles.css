@@ -873,15 +873,19 @@ button.hero-updates-btn {
     letter-spacing: 0.5px;
   }
 
-  /* Hero section - yarn image larger, title + Get Updates fit in first viewport */
+  /* Hero section - shorter, yarn image larger */
+  #canvas-container {
+    height: 85vh;
+    min-height: 85vh;
+  }
   .hero-yarn-image {
-    height: 70vh;
-    max-width: 92vw;
-    bottom: 22vh;
+    height: 80vh;
+    max-width: 96vw;
+    bottom: 18vh;
     object-position: center bottom;
   }
   .hero-bottom-ui {
-    bottom: 20px;
+    bottom: 16px;
     gap: 8px;
   }
   .hero-title-gif {
@@ -985,6 +989,11 @@ button.hero-updates-btn {
     line-height: 1.7;
   }
 
+  /* Section 4 - move text up on tablet */
+  #section-4 .section-4-text {
+    margin-top: -24px;
+  }
+
   /* Team section */
   #team-section {
     padding: 60px 24px 80px;
@@ -1042,13 +1051,17 @@ button.hero-updates-btn {
     font-size: 16px;
   }
 
+  #canvas-container {
+    height: 80vh;
+    min-height: 80vh;
+  }
   .hero-yarn-image {
-    height: 65vh;
-    max-width: 94vw;
-    bottom: 20vh;
+    height: 75vh;
+    max-width: 98vw;
+    bottom: 15vh;
   }
   .hero-bottom-ui {
-    bottom: 16px;
+    bottom: 12px;
     gap: 6px;
   }
   .hero-title-gif {
@@ -1078,6 +1091,9 @@ button.hero-updates-btn {
   .section-3-model-image,
   .section-4-model-image {
     height: 35vh;
+  }
+  #section-4 .section-4-text {
+    margin-top: 0;
   }
 
   #team-section {

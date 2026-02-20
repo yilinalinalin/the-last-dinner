@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <!-- Menu bar -->
@@ -42,7 +42,7 @@
             <p class="synopsis-text">This female-led proof of concept marks the director's independent debut and lays the foundation for a feature-length coming-of-age drama. Powered by an NYU Tisch team and supported by Emmy and Peabody-nominated mentors, the film shoots June 2026 in Los Angeles, with completion targeted for late 2026.</p>
             <p class="synopsis-text"><em>Story by Khushi Hora<br>
             Screenplay by Anjali Moorthy & Khushi Hora</em></p>
-            <form class="pitch-deck-form" id="pitch-deck-form" data-api-url="http://localhost:3001">
+            <form class="pitch-deck-form" id="pitch-deck-form" data-api-url="">
                 <input type="email" name="email" class="updates-input" placeholder="Your email" required>
                 <button type="submit" class="pitch-deck-btn">Request Pitch Deck & Director's Statement</button>
             </form>
@@ -249,7 +249,7 @@
         }
     }
     </script>
-    <script type="module" src="script.js"></script>
+    <script type="module" src="/script.js"></script>
     <script>
       (function() {
         function handleSubmit(form) {
@@ -267,7 +267,7 @@
           btn.dataset.originalText = btn.textContent;
           btn.textContent = 'Submitting...';
 
-          fetch(apiUrl + '/api/subscribe', {
+          fetch('/api/subscribe', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: email })

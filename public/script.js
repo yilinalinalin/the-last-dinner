@@ -507,24 +507,13 @@ const applePileGroup = createApplePile();
 let time = 0;
 let hoveredObject = null;
 
-// Mouse move handler
+// Mouse move handler - set cursor position on document root so both torch and sphere inherit
 function onMouseMove(event) {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
     
-    // Update torch cursor position
-    const torchOverlay = document.getElementById('torch-overlay');
-    if (torchOverlay) {
-        torchOverlay.style.setProperty('--cursor-x', `${event.clientX}px`);
-        torchOverlay.style.setProperty('--cursor-y', `${event.clientY}px`);
-    }
-    
-    // Update white sphere cursor position
-    const cursorSphere = document.getElementById('cursor-sphere');
-    if (cursorSphere) {
-        cursorSphere.style.setProperty('--cursor-x', `${event.clientX}px`);
-        cursorSphere.style.setProperty('--cursor-y', `${event.clientY}px`);
-    }
+    document.documentElement.style.setProperty('--cursor-x', `${event.clientX}px`);
+    document.documentElement.style.setProperty('--cursor-y', `${event.clientY}px`);
     
     // Tooltips removed - keeping raycaster for potential future use
     // raycaster.setFromCamera(mouse, camera);
@@ -540,20 +529,7 @@ function onMouseMove(event) {
 
 window.addEventListener('mousemove', onMouseMove);
 
-// Detect touch/mobile devices
-const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
-
-// Disable custom cursor and torch on mobile/touch devices
-if (isTouch) {
-    const cursor = document.querySelector(".cursor-sphere") || document.getElementById("cursor-sphere");
-    if (cursor) cursor.style.display = "none";
-
-    const torch = document.querySelector(".torch-overlay") || document.getElementById("torch-overlay");
-    if (torch) torch.style.display = "none";
-
-    // Also prevent mousemove handler from running on touch devices
-    window.removeEventListener('mousemove', onMouseMove);
-}
+// Cursor/torch visibility handled by CSS media query (max-width: 900px)
 
 // Animation loop
 function animate() {

@@ -1103,3 +1103,71 @@ button.hero-updates-btn {
     }
 }
 
+/* ========= Responsive layout for sections 2, 3, 4 ========= */
+
+/* Make each section a 2-column grid on desktop */
+#section-2,
+#section-3,
+#section-4 {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* text / image sizing */
+  align-items: center;
+  gap: 48px;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 60px;
+
+  position: relative;
+  overflow: visible;
+}
+
+/* Ensure images participate in layout (NOT absolute) */
+#section-2 .section-2-model-image,
+#section-3 .section-3-model-image,
+#section-4 .section-4-model-image {
+  position: static !important;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  justify-self: end;
+  pointer-events: none;
+}
+
+/* Desktop ordering */
+/* Section 2: image LEFT, text RIGHT */
+#section-2 .section-2-model-image { order: 1; justify-self: start; }
+#section-2 .section-2-text        { order: 2; }
+
+/* Section 3: image RIGHT, text LEFT */
+#section-3 .section-3-text        { order: 1; }
+#section-3 .section-3-model-image { order: 2; }
+
+/* Section 4: image LEFT, text RIGHT */
+#section-4 .section-4-model-image { order: 1; justify-self: start; }
+#section-4 .section-4-text        { order: 2; }
+
+/* MOBILE: stack image on top, text on bottom */
+@media (max-width: 900px) {
+  #section-2,
+  #section-3,
+  #section-4 {
+    grid-template-columns: 1fr;
+    padding: 80px 24px;
+    gap: 24px;
+  }
+
+  #section-2 .section-2-model-image,
+  #section-3 .section-3-model-image,
+  #section-4 .section-4-model-image {
+    order: 1;
+    justify-self: center;
+    max-width: 420px;
+  }
+
+  #section-2 .section-2-text,
+  #section-3 .section-3-text,
+  #section-4 .section-4-text {
+    order: 2;
+  }
+}

@@ -47,6 +47,7 @@ const fillLight4 = new THREE.DirectionalLight(0xffffff, 0.1); // Reduced intensi
 fillLight4.position.set(3, 2, 3); // Other side fill light
 scene.add(fillLight4);
 
+const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
 
 // Mobile detection
 function isMobile() {
@@ -539,6 +540,21 @@ function onMouseMove(event) {
 
 window.addEventListener('mousemove', onMouseMove);
 
+// Detect touch/mobile devices
+const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+// Disable custom cursor and torch on mobile/touch devices
+if (isTouch) {
+    const cursor = document.querySelector(".cursor-sphere") || document.getElementById("cursor-sphere");
+    if (cursor) cursor.style.display = "none";
+
+    const torch = document.querySelector(".torch-overlay") || document.getElementById("torch-overlay");
+    if (torch) torch.style.display = "none";
+
+    // Also prevent mousemove handler from running on touch devices
+    window.removeEventListener('mousemove', onMouseMove);
+}
+
 // Animation loop
 function animate() {
     requestAnimationFrame(animate);
@@ -723,6 +739,18 @@ const blendedLookAt = new THREE.Vector3().copy(heroLookAt);
 
 // Scroll detection for viewport switching with smooth animations
 function handleScroll() {
+    if (isTouch || window.innerWidth <= 900) {
+    // On mobile: show everything immediately, no scroll-fade timing
+    const show = (el) => { if (el) { el.style.opacity = "1"; el.style.transform = "none"; } };
+
+    show(section2TextEl); show(section3TextEl); show(section4TextEl);
+    if (section2ImageEl) section2ImageEl.style.opacity = "1";
+    if (section3ImageEl) section3ImageEl.style.opacity = "1";
+    if (section4ImageEl) section4ImageEl.style.opacity = "1";
+
+    return; // IMPORTANT: skip the desktop scroll math
+  }
+    
     const scrollY = window.scrollY;
     const viewportHeight = window.innerHeight;
     const scrollProgress = scrollY / viewportHeight;

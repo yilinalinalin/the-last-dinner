@@ -1,0 +1,12 @@
+{
+  "name": "last-dinner-website",
+  "version": "1.0.0",
+  "description": "Last Dinner film website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

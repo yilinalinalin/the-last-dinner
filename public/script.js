@@ -83,7 +83,7 @@ const section3ImageEl = document.querySelector('.section-3-model-image');
 const section4ImageEl = document.querySelector('.section-4-model-image');
 const heroYarnImageEl = document.querySelector('.hero-yarn-image');
 if (section4ImageEl) {
-    section4ImageEl.src = 'public/yarn_girl_model.png?v=' + Date.now();
+    section4ImageEl.src = '/yarn_girl_model.png?v=' + Date.now();
 }
 
 // Create Yarn Girl - load FBX model for homepage (first viewport)
@@ -770,11 +770,11 @@ function handleScroll() {
         }
     });
     // Section 4, 3: image opacity driven by scroll (same display logic)
-    if (section4ImageEl) section4ImageEl.style.opacity = section4Alpha;
-    if (section3ImageEl) section3ImageEl.style.opacity = section3Alpha;
+    if (section4ImageEl) section4ImageEl.style.opacity = 1;
+    if (section3ImageEl) section3ImageEl.style.opacity = 1;
     // Section 2: melting_ice.png image (opacity driven by scroll)
     if (section2ImageEl) {
-        section2ImageEl.style.opacity = section2Alpha;
+        section2ImageEl.style.opacity = 1;
     }
     iceBlocks.forEach((ice) => {
         if (ice) ice.visible = false; // Section 2 uses static image

@@ -921,7 +921,7 @@ button.hero-updates-btn {
     background-image: url('background_mobile.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.5;
+    opacity: 0.8;
   }
 
   /* Hide custom cursor and torch overlay on mobile */

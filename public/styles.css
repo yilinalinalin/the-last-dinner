@@ -273,14 +273,11 @@ a.credits-updates-btn {
     background: rgba(100, 100, 100, 0.3);
 }
 
-/* Background image (50% opacity) for sections after hero */
-#synopsis-section::before,
-#section-2::before,
-#section-3::before,
-#section-4::before,
-#team-section::before,
-#footer::before,
-#designer-footer::before {
+/* Background image (30% opacity) for all content after hero – beneath all content */
+#content-after-hero {
+    position: relative;
+}
+#content-after-hero::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -288,9 +285,18 @@ a.credits-updates-btn {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.5;
+    opacity: 0.3;
     pointer-events: none;
-    z-index: 0;
+    z-index: -1;
+}
+#content-after-hero #synopsis-section,
+#content-after-hero #section-2,
+#content-after-hero #section-3,
+#content-after-hero #section-4,
+#content-after-hero #team-section,
+#content-after-hero #footer,
+#content-after-hero #designer-footer {
+    background: transparent;
 }
 
 /* Synopsis section */

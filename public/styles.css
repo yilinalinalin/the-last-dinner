@@ -492,7 +492,7 @@ a.credits-updates-btn {
 .section-4-text {
     position: absolute;
     left: 200px;
-    top: 30%;
+    top: 20%;
     transform: translateY(-50%);
     width: 550px;
     font-family: var(--font-body);
@@ -502,7 +502,7 @@ a.credits-updates-btn {
     color: #ffffff;
     z-index: 10;
     opacity: 0;
-    transform: translateY(-50%) translateX(-50px);
+    transform: translateY(-20%) translateX(-50px);
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
@@ -548,9 +548,17 @@ a.credits-updates-btn {
     text-align: center;
 }
 
-/* Center last two team members in 3-column grid */
-.team-member-centered {
-    grid-column: 2;
+/* Last two team members on one line, centered */
+.team-member-pair {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.team-member-pair .team-member {
+    flex: 0 1 280px;
+    max-width: 320px;
 }
 
 .team-member-photo {
@@ -606,8 +614,8 @@ a.credits-updates-btn {
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    .team-member-centered {
-        grid-column: auto;
+    .team-member-pair {
+        grid-column: 1 / -1;
     }
 }
 
@@ -616,8 +624,9 @@ a.credits-updates-btn {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    .team-member-centered {
-        grid-column: auto;
+    .team-member-pair {
+        flex-direction: column;
+        align-items: center;
     }
 }
 

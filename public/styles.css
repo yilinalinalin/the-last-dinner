@@ -336,6 +336,10 @@ a.credits-updates-btn {
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.9);
     text-align: left;
+    margin-bottom: 28px;
+}
+.synopsis-text:last-of-type {
+    margin-bottom: 0;
 }
 
 /* Pitch deck request form (end of synopsis) */

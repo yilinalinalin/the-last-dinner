@@ -656,6 +656,9 @@ a.credits-updates-btn {
         flex-direction: column;
         align-items: center;
     }
+    .team-member-pair .team-member {
+        width: 100%;
+    }
 }
 
 /* Footer */

@@ -273,6 +273,26 @@ a.credits-updates-btn {
     background: rgba(100, 100, 100, 0.3);
 }
 
+/* Background image (50% opacity) for sections after hero */
+#synopsis-section::before,
+#section-2::before,
+#section-3::before,
+#section-4::before,
+#team-section::before,
+#footer::before,
+#designer-footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+}
+
 /* Synopsis section */
 #synopsis-section {
     width: 100vw;
@@ -634,6 +654,7 @@ a.credits-updates-btn {
 
 /* Footer */
 #footer {
+    position: relative;
     width: 100%;
     padding: 50px 40px;
     background: #0a0a0a;
@@ -745,6 +766,7 @@ button.hero-updates-btn {
 
 /* Designer credit footer */
 #designer-footer {
+    position: relative;
     width: 100%;
     padding: 24px 40px;
     background: #0a0a0a;

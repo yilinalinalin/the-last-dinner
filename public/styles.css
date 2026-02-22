@@ -916,9 +916,9 @@ button.hero-updates-btn {
 
 /* ===== Mobile responsive styles ===== */
 @media (max-width: 900px) {
-  /* Background image: match width to device viewport on mobile */
+  /* Background image: match device width, maintain aspect ratio (no distortion) */
   #content-after-hero::before {
-    background-size: 100vw 100%;
+    background-size: 100vw auto;
   }
 
   /* Hide custom cursor and torch overlay on mobile */

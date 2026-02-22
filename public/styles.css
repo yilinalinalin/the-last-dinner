@@ -548,17 +548,18 @@ a.credits-updates-btn {
     text-align: center;
 }
 
-/* Last two team members on one line, centered */
+/* Last two team members on one line, centered (desktop) */
 .team-member-pair {
     grid-column: 1 / -1;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 .team-member-pair .team-member {
-    flex: 0 1 280px;
-    max-width: 320px;
+    flex: 0 0 280px;
+    width: 280px;
 }
 
 .team-member-photo {

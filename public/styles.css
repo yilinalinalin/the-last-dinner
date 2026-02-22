@@ -1,3 +1,7 @@
+:root {
+    --font-heading: Cochin, "Cochin", "Baskerville", "Times New Roman", serif;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -24,6 +28,7 @@ body {
     width: 100%;
     padding: 30px 50px;
     display: flex;
+    align-items: center;
     justify-content: center;
     gap: 40px;
     z-index: 10001; /* Above cursor sphere */
@@ -35,7 +40,7 @@ body {
 }
 
 .menu-item {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-heading);
     font-size: 18px;
     font-weight: 400;
     color: #ffffff;
@@ -285,7 +290,7 @@ a.credits-updates-btn {
 }
 
 .synopsis-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-heading);
     font-weight: 400;
     font-size: 32px;
     color: #ffffff;
@@ -392,7 +397,7 @@ a.credits-updates-btn {
 }
 
 .section-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-heading);
     font-weight: 400;
     font-size: 32px;
     color: #ffffff;
@@ -486,7 +491,7 @@ a.credits-updates-btn {
 .section-4-text {
     position: absolute;
     left: 200px;
-    top: 30%;
+    top: 50%;
     transform: translateY(-50%);
     width: 550px;
     font-family: 'Poppins', sans-serif;
@@ -518,7 +523,7 @@ a.credits-updates-btn {
 }
 
 .team-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-heading);
     font-weight: 400;
     font-size: 32px;
     color: #ffffff;
@@ -785,6 +790,7 @@ button.hero-updates-btn {
 }
 
 .hover-text h2 {
+    font-family: var(--font-heading);
     color: #333;
     margin-bottom: 10px;
     font-size: 24px;

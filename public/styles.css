@@ -352,7 +352,7 @@ a.credits-updates-btn {
 /* Section 2 (ice cubes section) */
 #section-2 {
     width: 100vw;
-    height: 100vh;
+    height: 85vh;
     position: relative;
     background: #0a0a0a;
     display: flex;
@@ -421,7 +421,7 @@ a.credits-updates-btn {
 /* Section 3 (same layout as section 4: image right, text left) */
 #section-3 {
     width: 100vw;
-    height: 100vh;
+    height: 85vh;
     position: relative;
     background: #0a0a0a;
     display: flex;
@@ -468,7 +468,7 @@ a.credits-updates-btn {
 /* Section 4 (yarn girl image left, text right – same format as section 3) */
 #section-4 {
     width: 100vw;
-    height: 100vh;
+    height: 85vh;
     position: relative;
     background: #0a0a0a;
     display: flex;
@@ -548,6 +548,11 @@ a.credits-updates-btn {
     text-align: center;
 }
 
+/* Center last two team members in 3-column grid */
+.team-member-centered {
+    grid-column: 2;
+}
+
 .team-member-photo {
     position: relative;
     width: 100%;
@@ -601,12 +606,18 @@ a.credits-updates-btn {
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .team-member-centered {
+        grid-column: auto;
+    }
 }
 
 @media (max-width: 600px) {
     .team-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+    .team-member-centered {
+        grid-column: auto;
     }
 }
 
@@ -951,10 +962,10 @@ button.hero-updates-btn {
   #section-3,
   #section-4 {
     height: auto;
-    min-height: 100vh;
+    min-height: 85vh;
     flex-direction: column;
-    padding: 60px 24px 80px;
-    gap: 40px;
+    padding: 40px 24px 50px;
+    gap: 28px;
   }
   .section-2-model-image,
   .section-3-model-image,
@@ -1080,11 +1091,13 @@ button.hero-updates-btn {
     margin-bottom: -12px;
   }
 
-  #synopsis-section,
+  #synopsis-section {
+    padding: 48px 16px 60px;
+  }
   #section-2,
   #section-3,
   #section-4 {
-    padding: 48px 16px 60px;
+    padding: 36px 16px 44px;
   }
   .synopsis-title,
   .section-title {

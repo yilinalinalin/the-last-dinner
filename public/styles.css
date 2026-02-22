@@ -273,7 +273,7 @@ a.credits-updates-btn {
     background: rgba(100, 100, 100, 0.3);
 }
 
-/* Background image (30% opacity) for all content after hero – beneath all content */
+/* Background image (50% opacity) for all content after hero – beneath all content */
 #content-after-hero {
     position: relative;
 }
@@ -281,13 +281,17 @@ a.credits-updates-btn {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('/background.jpg');
+    background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0.5;
     pointer-events: none;
-    z-index: -1;
+    z-index: 0;
+}
+#content-after-hero > * {
+    position: relative;
+    z-index: 1;
 }
 #content-after-hero #synopsis-section,
 #content-after-hero #section-2,

@@ -16,7 +16,20 @@
         <a href="#synopsis-section" class="menu-item">About</a>
         <a href="#team-section" class="menu-item">Team</a>
         <a href="#footer" class="menu-item">Contact</a>
+        <button type="button" class="menu-item menu-item-button" id="contribute-open" aria-haspopup="dialog" aria-controls="kickstarter-modal">Contribute Now</button>
     </nav>
+
+    <!-- Kickstarter embed (opened from nav) -->
+    <div id="kickstarter-modal" class="kickstarter-modal" aria-hidden="true" role="presentation">
+        <div class="kickstarter-modal-backdrop" data-kickstarter-close tabindex="-1" aria-hidden="true"></div>
+        <div class="kickstarter-modal-panel" role="dialog" aria-modal="true" aria-labelledby="kickstarter-modal-title">
+            <h2 id="kickstarter-modal-title" class="kickstarter-modal-title">Contribute on Kickstarter</h2>
+            <button type="button" class="kickstarter-modal-close" data-kickstarter-close aria-label="Close">×</button>
+            <div class="kickstarter-modal-embed">
+                <iframe src="https://www.kickstarter.com/projects/thelastdinner/617335257/widget/card.html?v=2" width="220" height="420" title="The Last Dinner on Kickstarter"></iframe>
+            </div>
+        </div>
+    </div>
     
     <!-- Hero section -->
     <div id="canvas-container">
@@ -304,6 +317,31 @@
             handleSubmit(this);
           });
         });
+
+          (function kickstarterModal() {
+          var openBtn = document.getElementById('contribute-open');
+          var modal = document.getElementById('kickstarter-modal');
+          if (!openBtn || !modal) return;
+          function show() {
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+          }
+          function hide() {
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            openBtn.focus();
+          }
+          openBtn.addEventListener('click', function() { show(); });
+          modal.querySelectorAll('[data-kickstarter-close]').forEach(function(el) {
+            el.addEventListener('click', hide);
+          });
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('is-open')) hide();
+          });
+        })();
+          
       })();
     </script>
 </body>

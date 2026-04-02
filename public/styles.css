@@ -55,6 +55,86 @@ body {
     opacity: 0.7;
 }
 
+button.menu-item {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+}
+/* Kickstarter modal (Contribute Now) */
+.kickstarter-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+.kickstarter-modal.is-open {
+    pointer-events: auto;
+    visibility: visible;
+    opacity: 1;
+}
+.kickstarter-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    cursor: pointer;
+}
+.kickstarter-modal-panel {
+    position: relative;
+    z-index: 1;
+    background: #0a0a0a;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 20px 20px 24px;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+    max-width: calc(100vw - 32px);
+}
+.kickstarter-modal-title {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+    margin: 0 0 16px;
+    letter-spacing: 1px;
+}
+.kickstarter-modal-embed {
+    display: flex;
+    justify-content: center;
+    line-height: 0;
+}
+.kickstarter-modal-embed iframe {
+    border: 0;
+    max-width: 100%;
+    vertical-align: middle;
+}
+.kickstarter-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+.kickstarter-modal-close:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
 /* Hero section (first viewport) */
 #canvas-container {
     width: 100vw;
@@ -941,8 +1021,10 @@ button.hero-updates-btn {
   /* Nav / menu */
   .menu-bar {
     padding: 14px 20px;
-    gap: 24px;
+    gap: 16px 20px;
     justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 10px;
   }
   .menu-item {
     font-size: 18px;
@@ -1121,7 +1203,8 @@ button.hero-updates-btn {
 @media (max-width: 480px) {
   .menu-bar {
     padding: 12px 16px;
-    gap: 20px;
+    gap: 10px 14px;
+    flex-wrap: wrap;
   }
   .menu-item {
     font-size: 16px;

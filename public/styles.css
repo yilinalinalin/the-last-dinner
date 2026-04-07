@@ -303,7 +303,6 @@ a.credits-updates-btn {
 #content-after-hero #section-2,
 #content-after-hero #section-3,
 #content-after-hero #section-4,
-#content-after-hero #contribute-section,
 #content-after-hero #team-section,
 #content-after-hero #footer,
 #content-after-hero #designer-footer {
@@ -555,31 +554,6 @@ a.credits-updates-btn {
 .section-4-stats {
   font-style: italic;
   font-weight: 300;
-}
-
-/* Contribute (Kickstarter) section */
-#contribute-section {
-  position: relative;
-  width: 100%;
-  padding: 80px 40px 100px;
-  background: #0a0a0a;
-}
-
-.contribute-embed {
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
-  position: relative;
-  aspect-ratio: 1600 / 900;
-  line-height: 0;
-}
-
-.contribute-embed iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
 }
 
 /* Team section */
@@ -1125,10 +1099,6 @@ html {
   margin-top: -60px;
 }
 
-#contribute-section {
-  padding: 60px 24px 80px;
-}
-
 /* Team section */
 #team-section {
   padding: 60px 24px 80px;
@@ -1232,10 +1202,6 @@ html {
 }
 #section-4 .section-4-text {
   margin-top: -60px;
-}
-
-#contribute-section {
-  padding: 48px 16px 60px;
 }
 
 #team-section {

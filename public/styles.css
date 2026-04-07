@@ -610,24 +610,19 @@ a.credits-updates-btn {
   text-align: center;
 }
 
-/* Last two team members: inner grid uses same 3 tracks + gap as .team-grid so
-   headshots match other rows. Items in columns 1 and 3 leave column 2 empty = centered pair. */
+/* Last row: two cards side-by-side (same width as one grid column), centered as a group */
 .team-member-pair {
   grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
   gap: 20px;
-  align-items: start;
-}
-.team-member-pair .team-member:nth-child(1) {
-  grid-column: 1;
-}
-.team-member-pair .team-member:nth-child(2) {
-  grid-column: 3;
 }
 .team-member-pair .team-member {
-  width: 100%;
+  flex: 0 0 calc((100% - 40px) / 3);
   min-width: 0;
+  max-width: calc((100% - 40px) / 3);
 }
 
 .team-member-photo {
@@ -692,15 +687,9 @@ a.credits-updates-btn {
   .team-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .team-member-pair {
-      grid-column: 1 / -1;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .team-member-pair .team-member:nth-child(1) {
-      grid-column: 1;
-  }
-  .team-member-pair .team-member:nth-child(2) {
-      grid-column: 2;
+  .team-member-pair .team-member {
+      flex: 0 0 calc((100% - 20px) / 2);
+      max-width: calc((100% - 20px) / 2);
   }
 }
 
@@ -710,11 +699,12 @@ a.credits-updates-btn {
       gap: 20px;
   }
   .team-member-pair {
-      grid-template-columns: 1fr;
+      flex-direction: column;
+      align-items: center;
   }
-  .team-member-pair .team-member:nth-child(1),
-  .team-member-pair .team-member:nth-child(2) {
-      grid-column: 1;
+  .team-member-pair .team-member {
+      flex: 0 0 auto;
+      max-width: 100%;
       width: 100%;
   }
 }

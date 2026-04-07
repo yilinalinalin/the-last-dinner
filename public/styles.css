@@ -597,7 +597,7 @@ a.credits-updates-btn {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -610,18 +610,24 @@ a.credits-updates-btn {
   text-align: center;
 }
 
-/* Last two team members on one line, centered in row (desktop) */
+/* Last two team members: inner grid uses same 3 tracks + gap as .team-grid so
+   headshots match other rows. Items in columns 1 and 3 leave column 2 empty = centered pair. */
 .team-member-pair {
   grid-column: 1 / -1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
-  flex-wrap: nowrap;
+  align-items: start;
+}
+.team-member-pair .team-member:nth-child(1) {
+  grid-column: 1;
+}
+.team-member-pair .team-member:nth-child(2) {
+  grid-column: 3;
 }
 .team-member-pair .team-member {
-  width: calc((100% - 40px) / 3);
-  flex: 0 0 auto;
+  width: 100%;
+  min-width: 0;
 }
 
 .team-member-photo {
@@ -640,6 +646,12 @@ a.credits-updates-btn {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* Landscape headshots: slight zoom so subject scale matches typical portrait crops */
+.team-member-photo img.team-photo-fill {
+  transform: scale(1.12);
+  transform-origin: center 32%;
 }
 
 .team-member-overlay {
@@ -678,10 +690,17 @@ a.credits-updates-btn {
 
 @media (max-width: 900px) {
   .team-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .team-member-pair {
       grid-column: 1 / -1;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .team-member-pair .team-member:nth-child(1) {
+      grid-column: 1;
+  }
+  .team-member-pair .team-member:nth-child(2) {
+      grid-column: 2;
   }
 }
 
@@ -691,10 +710,11 @@ a.credits-updates-btn {
       gap: 20px;
   }
   .team-member-pair {
-      flex-direction: column;
-      align-items: center;
+      grid-template-columns: 1fr;
   }
-  .team-member-pair .team-member {
+  .team-member-pair .team-member:nth-child(1),
+  .team-member-pair .team-member:nth-child(2) {
+      grid-column: 1;
       width: 100%;
   }
 }

@@ -630,11 +630,14 @@ a.credits-updates-btn {
   margin-bottom: 16px;
   overflow: hidden;
   border-radius: 8px;
+  aspect-ratio: 280 / 320;
 }
 
 .team-member-photo img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  aspect-ratio: 280 / 320;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
